@@ -1,0 +1,57 @@
+.footer {
+  background: #3c4242;
+  padding: 60px 0;
+
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 77px;
+
+    .footer__need-help,
+    .footer__company,
+    .footer__more-info,
+    .footer__location {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .footer__title {
+        color: #f6f6f6;
+        font-size: 28px;
+
+        font-weight: 700;
+        line-height: 2.17;
+      }
+
+      .footer__company-list,
+      .footer__more-info-list,
+      .footer__location-list,
+      .footer__need-help-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .footer-item {
+          color: #f6f6f6;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 2.17;
+        }
+      }
+    }
+  }
+
+  .footer__wrapper-btn {
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 46px;
+  }
+
+  .footer__copyright {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+  }
+}

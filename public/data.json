@@ -1,0 +1,88 @@
+{
+    "products": [
+        {
+            "name": "Шкіряні кросівки Lacoste LINESHOT 223 3 SMA",
+            "price": 125,
+            "image": "./img/shoes1.webp",
+            "article": 1,
+            "color": "white"
+        },
+        {
+            "name": "Кросівки HUGO Leon XF Black",
+            "price": 200,
+            "image": "./img/shoes2.webp",
+            "article": 2,
+            "color": "black"
+        },
+        {
+            "name": "Кросівки Tommy Jeans TJM RUNNER MIX MATERIAL",
+            "price": 189,
+            "image": "./img/shoes3.webp",
+            "article": 3,
+            "color": "black"
+        },
+        {
+            "name": "Кросівки Tommy Jeans TJM RUNNER TRANSLUCENT",
+            "price": 195,
+            "image": "./img/shoes4.webp",
+            "article": 4,
+            "color": "black"
+        },
+        {
+            "name": "Кросівки HUGO Leon XF Gray",
+            "price": 187,
+            "image": "./img/shoes5.webp",
+            "article": 5,
+            "color": "gray"
+        },
+        {
+            "name": "Кросівки Puma RS-X Efekt Speckle",
+            "price": 130,
+            "image": "./img/shoes6.webp",
+            "article": 6,
+            "color": "green"
+        },
+        {
+            "name": "Кросівки PS Extreme Run",
+            "price": 100,
+            "image": "./img/shoes7.webp",
+            "article": 7,
+            "color": "black-white"
+        },
+        {
+            "name": "Кросівки Karl Lagerfeld Kapri",
+            "price": 170,
+            "image": "./img/shoes8.webp",
+            "article": 8,
+            "color": "white"
+        },
+        {
+            "name": "Шкіряні кросівки Calvin Klein LOW TOP LACE UP LTH HF",
+            "price": 190,
+            "image": "./img/shoes9.webp",
+            "article": 9,
+            "color": "white"
+        },
+        {
+            "name": "Шкіряні кросівки Karl Lagerfeld Kl52420 Blaze",
+            "price": 179,
+            "image": "./img/shoes10.webp",
+            "article": 10,
+            "color": "white"
+        },
+        {
+            "name": "Шкіряні кросівки Tommy Jeans Skate Sneaker",
+            "price": 159,
+            "image": "./img/shoes11.webp",
+            "article": 11,
+            "color": "white"
+        },
+        {
+            "name": "Шкіряні кросівки Karl Lagerfeld Kapri Kushion",
+            "price": 199,
+            "image": "./img/shoes12.webp",
+            "article": 12,
+            "color": "black"
+        }
+    ]
+}

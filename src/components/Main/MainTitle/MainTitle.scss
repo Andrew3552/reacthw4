@@ -1,0 +1,54 @@
+.main-title {
+  padding: 129px 0 133px;
+  background-image: url("..//..//../assets/img/header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 91px;
+   
+
+    .title {
+        color: #FFF;
+        font-size: 78px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 0.315px;
+        max-width: 460px;
+      }
+    
+      .subtitle {
+        color: #FFF;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.157px;
+        text-transform: capitalize;
+      }
+    
+      .description {
+        color: #FFF;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5; 
+        letter-spacing: 0.315px;
+      }
+    
+      .main-btn {
+        border-radius: 8px;
+        background: #fff;
+        padding: 16px 72px;
+        color: #3c4242;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+        max-width: 265px;
+      }
+  }
+
+  
+}

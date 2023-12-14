@@ -1,0 +1,60 @@
+.favorite-page {
+  margin: 100px 0;
+
+  &__title {
+    color: #3c4242;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.68px;
+    margin-bottom: 70px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #ebeaea;
+      }
+
+      .favorite-page__item{
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+
+        .favorite-page__img {
+          height: 150px;
+          width: 100px;
+          border-radius: 15px;
+        }
+  
+        .favorite-page__content {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          color: #2a2f2f;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1.5;
+        }
+      }
+      .favorite-page__heart{
+        cursor: pointer;
+        font-size: 50px;
+        padding-right: 20px;
+      }
+    }
+  }
+}

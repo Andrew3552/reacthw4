@@ -1,0 +1,43 @@
+.modal__wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    
+}
+
+.modal__box {
+    position: fixed;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    background-color: antiquewhite;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: right;
+
+    .modal__body {
+        text-align: center; 
+    }
+   
+    .modal__close{
+        text-align:start;
+    }
+
+    .modal__footer-btn{
+        font-size: 15px;
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .modal-cart__item-img{
+        margin: 10px 0;
+    }
+
+   
+}
