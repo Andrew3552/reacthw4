@@ -1,19 +1,25 @@
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
+import { selectProducts } from '../../../../store/selectors';
+
+
 
 import ProductCarts from "./ProdyctsCarts"
 
 
 const Products = ({
-    data, 
+    // data, 
     handleFavorite, 
     isFavorite, 
     isCart, 
     handleAddToCart
 }) => {
 
+    const {products} = useSelector(selectProducts);
+
     return (
         <div className="products">
-            {data.map(({ name, price, image, article, color}) =>
+            {products && products.map(({ name, price, image, article, color}) =>
                 (<ProductCarts 
                     key={article}
                     name={name}

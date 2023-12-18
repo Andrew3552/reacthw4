@@ -18,7 +18,7 @@ const ProductCarts = ({
     handleAddToCart
 }) => {
 
-    const products = {
+    const product = {
         name,
         price,
         image,
@@ -56,7 +56,7 @@ const ProductCarts = ({
         <>
         {isModalOpen && 
             (<ProductModal
-            products={products}
+            product={product}
             handleClose={openModal}
             handleAddToCartWithModalClose={handleAddToCartWithModalClose}
             isFavorite={isFavorite}
