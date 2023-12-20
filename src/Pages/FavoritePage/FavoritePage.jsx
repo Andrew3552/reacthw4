@@ -1,21 +1,20 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import { CiHeart } from "react-icons/ci";
+
+import { selectFavorite } from "../../store/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFavoriteProducts } from "../../store/productsSlice";
 
 import Container from "../../components/Helper/Container";
 
 import "./FavoritePage.scss";
 
-const FavoritePage = ({ setFavorite }) => {
-  const [favoriteProducts, setFavoriteProducts] = useState([]);
+const FavoritePage = () => {
 
-  useEffect(() => {
-    const savedFavorite = localStorage.getItem("favorite");
-    if (savedFavorite) {
-      setFavoriteProducts(JSON.parse(savedFavorite));
-    }
-  }, []);
+  const dispatch = useDispatch();
+  const favoriteProducts = useSelector(selectFavorite);
 
   const favoriteItemsRef = useRef(null);
   useEffect(() => {
@@ -24,24 +23,13 @@ const FavoritePage = ({ setFavorite }) => {
     }
   })
 
-  const removeFromFavorite = (article) => {
-    const updatedFavorite = favoriteProducts.filter(
-      (fav) => fav.article !== article
-    );
-    setFavoriteProducts(updatedFavorite);
-    localStorage.setItem("favorite", JSON.stringify(updatedFavorite));
-    localStorage.removeItem(`isClicked_${article}`);
-
-
-    setFavorite(updatedFavorite);
-  }
-
   return (
     <div ref={favoriteItemsRef} className="favorite-page">
       <Container>
         <h2 className="favorite-page__title">FavoritePage</h2>
         <ul className="favorite-page__wrapper">
-          {favoriteProducts.map((fav) => (
+          {favoriteProducts.length > 0 ? (
+          favoriteProducts.map((fav) => (
             <li className="favorite-page__wrapper-item" key={fav.article}>
               <div className="favorite-page__item">
                 <img className="favorite-page__img" src={fav.image} />
@@ -52,9 +40,11 @@ const FavoritePage = ({ setFavorite }) => {
                 </div>
               </div>
               <CiHeart className="favorite-page__heart" 
-              onClick={() => removeFromFavorite(fav.article)}/>
+              onClick={() => {dispatch(removeFavoriteProducts(fav.article))}}/>
             </li>
-          ))}
+          ))) : (
+            <p className="favorite-page__empty">Нет избранных товаров</p>
+          )}
         </ul>
       </Container>
     </div>
@@ -62,9 +52,8 @@ const FavoritePage = ({ setFavorite }) => {
 };
 
 FavoritePage.propTypes = {
-  setFavorite: PropTypes.func,
-  removeFromFavorite: PropTypes.func,
-
+  favoriteProducts: PropTypes.array,
+  dispatch: PropTypes.func,
 }
 
 export default FavoritePage;

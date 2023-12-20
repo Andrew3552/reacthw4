@@ -6,22 +6,20 @@ import ModalFooter from "../Modal/ModalFooter";
 import ModalClose from "../Modal/ModalClose";
 import PropTypes from "prop-types";
 
+
 import './ModalCartPage.scss'
 
 const ModalCartPage = ({
     title,
     desc,
-    handleClose,
-    handleOk
+    selectedItem
 }) => {
 
     return (
-        <ModalWrapper ModalClose={handleClose}>
+        <ModalWrapper >
             <Modal>
                 <ModalHeader>
-                    <ModalClose
-                        ModalClose={handleClose}
-                    />
+                    <ModalClose/>
                 </ModalHeader>
                 <ModalBody>
                     <h1 className="modal-cart__item-title">{title}</h1>
@@ -30,8 +28,7 @@ const ModalCartPage = ({
                 <ModalFooter
                     thirdText="Ok"
                     secondText="Cancel"
-                    thirdClick={handleOk}
-                    secondClick={handleClose}
+                    selectedItem={selectedItem}
                 />
             </Modal>
         </ModalWrapper>
@@ -41,8 +38,7 @@ const ModalCartPage = ({
 ModalCartPage.propTypes = {
     title: PropTypes.string,
     desc: PropTypes.string,
-    handleClose: PropTypes.func,
-    handleOk: PropTypes.func
+    selectedItem: PropTypes.object
 }
 
 export default ModalCartPage

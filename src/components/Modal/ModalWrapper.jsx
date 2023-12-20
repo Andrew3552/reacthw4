@@ -1,21 +1,28 @@
 import PropTypes from "prop-types";
 
-const ModalWrapper = ({children, ModalClose}) => {
+import { useDispatch } from "react-redux";
+import { openModal } from "../../store/productsSlice";
 
-    const handWrapperClick = (e) => {
+const ModalWrapper = ({children}) => {
+
+    const dispatch = useDispatch();
+
+    const modalClose = (e) => {
         if (e.target === e.currentTarget) {
-            ModalClose()
+           dispatch(openModal("modalCart"));
+        } if (e.target === e.currentTarget) {
+            dispatch(openModal("modalAccept"));
         }
     }
 
     return (
-        <div className="modal__wrapper" onClick={handWrapperClick}>{children}</div>
+        <div className="modal__wrapper" onClick= {modalClose}>{children}</div>
     )
 }
 
 ModalWrapper.propTypes = {
     children: PropTypes.node,
-    ModalClose: PropTypes.func
+    modalClose: PropTypes.func
 }
 
 export default ModalWrapper

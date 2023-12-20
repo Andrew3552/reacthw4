@@ -9,27 +9,22 @@ import ModalWrapper from "../../../Modal/ModalWrapper";
 
 import "./ProductModal.scss";
 
-const ProductModal = ({
-  handleClose, 
+const ProductModal = ({ 
   name, 
   image, 
   price, 
   article, 
   color, 
-  handleFavorite, 
-  isFavorite, 
-  isCart, 
-  handleAddToCart,
   handleAddToCartWithModalClose
 }) => {
 
     return (
-    <ModalWrapper ModalClose={handleClose}>
+    <ModalWrapper >
       <Modal>
-            <ModalClose  ModalClose={handleClose}/>
+            <ModalClose />
         <ModalHeader>
           <ModalBody>
-            <img className="modal-cart__item-img" src={image} alt="" />
+            <img className="modal-cart__item-img" src={image} alt=""  />
             <p className="modal-cart__item-title">
               <b>Name:</b> {name}
             </p>
@@ -41,13 +36,8 @@ const ProductModal = ({
             </p>
           </ModalBody>
         </ModalHeader>
-        <ModalFooter 
-        isFavorite={isFavorite}
-        handleFavorite={handleFavorite}
+        <ModalFooter
         handleAddToCartWithModalClose={handleAddToCartWithModalClose}
-        isCart={isCart}
-        handleAddToCart={handleAddToCart}
-        ModalClose={handleClose}
         article={article}
         firstText="Add to cart"
         >
@@ -58,16 +48,12 @@ const ProductModal = ({
 };
 
 ProductModal.propTypes = {
-  handleClose: PropTypes.func,
   name: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.number,
   article: PropTypes.number,
   color: PropTypes.string,
-  handleFavorite: PropTypes.func,
-  isFavorite: PropTypes.func,
-  isCart: PropTypes.func,
-  handleAddToCart: PropTypes.func
+  handleAddToCartWithModalClose: PropTypes.func
 }
 
 export default ProductModal;

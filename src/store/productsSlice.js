@@ -4,18 +4,32 @@ import { fetchData } from "./operatioins";
 const initialState = {
   productArray: [],
   addToCart: [],
-  isFavorite: [],
+  favorite: [],
+  isModalOpenCart: false,
+  currentProduct: {},
+  isModalOpenAccept: false,
   isLoadind: false,
   error: null,
-  isCart: [],
-  favorite: [],
-  cart: [],
 };
 
 const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    addProducts: (state, action) => {
+      state.productArray = [...action.payload];
+    },
+    setCurrentProduct: (state, action) => {
+      state.currentProduct = action.payload;
+    },
+    openModal: (state, action) => {
+      if (action.payload === "modalCart") {
+        state.isModalOpenCart = !state.isModalOpenCart;
+      }
+      if (action.payload === "modalAccept") {
+        state.isModalOpenAccept = !state.isModalOpenAccept;
+      }
+    },
     setFavoriteProducts: (state, action) => {
       state.favorite.push(action.payload);
     },
@@ -24,8 +38,13 @@ const productSlice = createSlice({
         (product) => product.article !== action.payload
       );
     },
-    addProducts: (state, action) => {
-      state.productArray.push(action.payload);
+    setCartProducts: (state, action) => {
+      state.addToCart.push(action.payload);
+    },
+    removeCartProducts: (state, action) => {
+      state.addToCart = state.addToCart.filter(
+        (product) => product.article !== action.payload
+      );
     },
   },
 
@@ -46,7 +65,7 @@ const productSlice = createSlice({
   },
 });
 
-export const { setFavoriteProducts, removeFavoriteProducts } =
+export const { setFavoriteProducts, removeFavoriteProducts, setCartProducts, removeCartProducts, addProducts, openModal, setCurrentProduct, removeFromFavoriteProducts } =
   productSlice.actions;
 
 export const productsReducer = productSlice.reducer;

@@ -1,20 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import rootReducer from "./reducer.js";
-// import { thunk } from "redux-thunk";
-
-// export const store = configureStore({
-//     reducer: rootReducer,
-//     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
-// })
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import { productsReducer } from "./productsSlice";
-
-// export const store = configureStore({
-//   reducer: {
-//     products: productsReducer,
-//   },
-// });
 
 import { configureStore } from '@reduxjs/toolkit';
 import {
@@ -34,7 +17,7 @@ import { productsReducer } from "./productsSlice";
 const productssPersistConfig = {
   key: "products",
   storage,
-  whitelist: ["favorite",],
+  whitelist: ["favorite", "addToCart"],
 };
 
 export const store = configureStore({

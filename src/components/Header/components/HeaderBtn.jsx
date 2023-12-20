@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { selectFavorite} from "../../../store/selectors";
+import { selectAddToCart, selectFavorite} from "../../../store/selectors";
 
 import HeartIcon from "./icons/heart"
 import ShoppingCartIcon from "./icons/shopping-cart"
 import { useSelector } from "react-redux";
 
-const HeaderBtn = ({addToCart}) => {
+const HeaderBtn = () => {
 
     const favorite = useSelector(selectFavorite);
+    const addToCart = useSelector(selectAddToCart);
 
     return  (
         <div className="header__btn">   

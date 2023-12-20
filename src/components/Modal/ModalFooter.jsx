@@ -1,27 +1,29 @@
 import PropTypes from "prop-types";
+import { openModal, removeCartProducts, } from "../../store/productsSlice";
+import { useDispatch } from "react-redux";
 
 import Button from "../Button/Button"
 
+
 const ModalFooter = ({
-    firstText, 
-    isCart, 
+    firstText,  
     article,
     secondText,
     thirdText,
-    secondClick,
-    thirdClick,
-    handleAddToCartWithModalClose
-}) => {
-
-   
+    handleAddToCartWithModalClose,
+    selectedItem
     
+}) => { 
+
+    const dispatch = useDispatch();
+   
     return (
         <div className="modal__footer">
             {firstText && <Button className="modal__footer-btn"  onClick={() => handleAddToCartWithModalClose(article)}>
-                {isCart ? "Add to cart" : ""}  
+                Add to cart  
                 </Button>}
-            {secondText && <Button className="modal__footer-btn btn-cancel" onClick={secondClick}>{secondText}</Button>}
-            {thirdText && <Button className="modal__footer-btn btn-ok" onClick={thirdClick}>{thirdText}</Button>}
+            {secondText && <Button className="modal__footer-btn btn-cancel" onClick={() => {dispatch(openModal("modalAccept"))}}>{secondText}</Button>}
+            {thirdText && <Button className="modal__footer-btn btn-ok" onClick={() => {dispatch(removeCartProducts(selectedItem)); dispatch(openModal("modalAccept"))}}>{thirdText}</Button>}
         </div>
     )
 }
@@ -29,8 +31,12 @@ const ModalFooter = ({
 ModalFooter.propTypes = {
     firstText: PropTypes.string,
     isCart: PropTypes.func,
-    handleAddToCart: PropTypes.func,
-    article: PropTypes.number
+    handleAddToCartWithModalClose: PropTypes.func,
+    article: PropTypes.number,
+    secondText: PropTypes.string,
+    thirdText: PropTypes.string,
+    handleAddToCartWithModalClose: PropTypes.func,
+    selectedItem: PropTypes.object
 }
 
 export default ModalFooter

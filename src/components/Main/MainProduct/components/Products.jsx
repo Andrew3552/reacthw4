@@ -8,11 +8,9 @@ import ProductCarts from "./ProdyctsCarts"
 
 
 const Products = ({
-    // data, 
-    handleFavorite, 
-    isFavorite, 
-    isCart, 
-    handleAddToCart
+    
+   
+   
 }) => {
 
     const {products} = useSelector(selectProducts);
@@ -26,23 +24,10 @@ const Products = ({
                     price={price}
                     image={image}
                     color={color}
-                    isFavorite={isFavorite}
-                    handleFavorite={handleFavorite}
-                    isCart={isCart}
-                    handleAddToCart={handleAddToCart}
                     article={article}
                 />))}
         </div>       
     )
 }
-
-Products.propTypes = {
-    data: PropTypes.array,
-    handleFavorite: PropTypes.func,
-    isFavorite: PropTypes.func,
-    isCart: PropTypes.func,
-    handleAddToCart: PropTypes.func
-}
-
 
 export default Products
